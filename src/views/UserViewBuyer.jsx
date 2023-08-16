@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {Card, Container} from 'react-bootstrap';
+import {Card, Container } from 'react-bootstrap';
 import CardGroup from 'react-bootstrap/CardGroup'
 
 
@@ -85,28 +85,11 @@ const UserViewBuyer = ({ user }) => {
     const artistCollection = artworks.filter((element) => element.seller_id === user.user_id);
 
     return (
-        <Container className='d-flex align-items-center flex-column vh-100 mt-5 mb-3 pt-5'>
+        <Container className='d-flex align-items-center flex-column mt-5 mb-3 pt-5'>
             <h2>Bienvenido, {user.username}</h2>
 
             <Container className='pt-3'>
-                <h1 className="text-center h3">Obras</h1>
-                <CardGroup>
-                {
-                    artistCollection.map((element, index) => (
-                    <Card className="bg-light text-white p-2">
-                        <Card.Img 
-                        key={index}
-                        variant="top"
-                        className="artist-collection" 
-                        src={element.url_image} />
-                        <Card.ImgOverlay>
-                        <Card.Title>{element.title}</Card.Title>
-                        </Card.ImgOverlay>
-                    </Card>
-                    ))
-                }                
-                </CardGroup>
-                <Card className='mt-5 mb-5 text-center'>
+            <Card className='mt-5 mb-5 text-center'>
                     <h2>Agregar Obra</h2>
                     <div className='form-group'>
                         <input className='form-control'  type='text' name='title' value={artworkData.title}  onChange={handleInputChange} placeholder='Ingresa el nombre de la obra' ></input>
@@ -118,10 +101,29 @@ const UserViewBuyer = ({ user }) => {
                         <br></br>
                         <input className='form-control' type='text' name='url_image' value={artworkData.url_image}   onChange={handleInputChange} placeholder='url imagen' ></input>
                         <br></br>
-                        <button onClick={handleAddArtwork} className='btn btn-dark mb-2'>Agregar obra</button>
+                        <button onClick={handleAddArtwork} className='btn-custom-black p-2 mb-2'>Agregar obra</button>
                     </div>
-                    {console.log(artworks)}
-                </Card>                
+                </Card>  
+                <h1 className="text-center h3">Obras</h1>
+                    
+                    <CardGroup>
+                    {
+                        artistCollection.map((element, index) => (
+                        <Card className="bg-light text-white p-2 image-upload d-flex justify-content-center align-items-center">
+                            <img 
+                            key={index}
+                            variant="top"
+                            className="artist-collection" 
+                            src={element.url_image} />
+                            <Card.ImgOverlay>
+                            <Card.Title className='text-center'>{element.title}</Card.Title>
+                            </Card.ImgOverlay>
+                        </Card>
+                        ))
+                    }                
+                    </CardGroup>
+                    
+
             </Container>            
         </Container>
     );

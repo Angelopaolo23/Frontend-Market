@@ -8,7 +8,7 @@ const Favoritos = () => {
     const navigate = useNavigate();
 
     return (
-        <div className="row w-100 my-5">
+        <div className="row w-100 my-5 vh-70">
             {artworks.filter((elemento) => {
                 if (user.favorites.includes(elemento.product_id)) {
                     return true;                    

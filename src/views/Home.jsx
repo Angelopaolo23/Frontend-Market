@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import MyContext from "../my_context";
 
 import CarouselImages from '../components/Carousel';
+import Newsletter from '../components/Newsletter';
 
 import Heart from '../components/Heart';
 
@@ -64,7 +65,7 @@ const Home = () => {
     }
 
     return(
-        <div className="pt-5">
+        <div className="pt-5 mt-4">
             <CarouselImages></CarouselImages>
             <div className="row w-100 mt-5">
                 {artworks.map(
@@ -79,7 +80,7 @@ const Home = () => {
                                     <hr></hr>
                                     <p>{element.description}</p>
                                     <div className="d-flex justify-content-around">
-                                        {isLoggedIn && <button onClick={() => addFunction(element.product_id)} className="btn btn-secondary">Añadir <i class="fa-solid fa-cart-shopping"></i></button>}                                        
+                                        {isLoggedIn && <button onClick={() => addFunction(element.product_id)} className=" btn-custom-black">Añadir <i class="fa-solid fa-cart-shopping"></i></button>}                                        
                                         <button className="btn" >Value: ${element.price}</button>
                                     </div>
                                 </div>
@@ -89,6 +90,7 @@ const Home = () => {
                 )
                 }
             </div>
+            <Newsletter />
         </div>
     )
 

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useContext } from "react";
+import logo from "../arteviva_logo.png";
 
 import MyContext from "../my_context";
 
@@ -22,7 +23,7 @@ const Navbar = () => {
         
     return isLoggedIn ? (
         <div className="navbar bg-secondary fixed-top w-100">            
-            <div className="container">
+            <div className="container-fluid">
                 <div className="navbar-brand">
                     <h5> <Link to="/carrito" className="text-light text-decoration-none"><i class="fa-solid fa-cart-shopping"></i> ${navTotal}</Link></h5>
                 </div>
@@ -31,7 +32,6 @@ const Navbar = () => {
                 </div>                
                 <div>
                     <h5><Link to="/busqueda" className="text-light text-decoration-none">Búsqueda</Link></h5>
-                
                 </div>
                 <div>
                     <h5><Link to="Login" className="text-light text-decoration-none">Perfil</Link></h5>

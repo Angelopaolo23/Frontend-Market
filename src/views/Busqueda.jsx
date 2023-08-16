@@ -38,7 +38,7 @@ const Busqueda = () => {
                                 <hr></hr>
                                 <p>{element.description}</p>
                                 <div className="d-flex justify-content-around">
-                                    <button onClick={() => Add_Click(element.product_id)} className="btn    btn-secondary">Añadir <i class="fa-solid fa-cart-shopping"></i></button>
+                                    <button onClick={() => Add_Click(element.product_id)} className="btn-custom-black">Añadir <i class="fa-solid fa-cart-shopping"></i></button>
                                     <button className="btn" >Value: {element.price}</button>
                                 </div>
                             </div>

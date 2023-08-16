@@ -29,8 +29,9 @@ const Carrito = () => {
     }, [reloadData]);   
 
     return(
-        <div className="container bg-light m-5 p-5">
-            <h6 className="text-dark">Detalles del pedido:</h6>
+        //LE AGREGUE LA CLASSNAME VH-70
+        <div className="container bg-light m-5 p-5 vh-70">
+            <h6 className="text-dark h2">Detalles del pedido:</h6>
             <div className="container bg-white p-3">
                 {cartInfo.filter((element) => {
                     if (element.quantity > 0) {
@@ -47,7 +48,7 @@ const Carrito = () => {
                     <div className="text-end">
                         <h3 className="text-dark">Total: {Intl.NumberFormat('es-CL',{style:'currency',currency:'CLP'}).format(navTotal)}                                      
                         </h3>
-                        <button className="btn btn-dark">Ir a Pagar</button>
+                        <button className="btn-custom-black m-2 px-5 py-2">Ir a Pagar</button>
                     </div>                
             </div>
         </div>

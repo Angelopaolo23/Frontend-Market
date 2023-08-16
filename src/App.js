@@ -7,6 +7,7 @@ import MyContext from './my_context';
 
 import Navbar from "./components/Navbar";
 import Footer from './components/Footer';
+import Header from './components/Header';
 
 import UserViewBuyer from './views/UserViewBuyer';
 import Home from './views/Home';
@@ -25,6 +26,7 @@ import { getArtworks } from './services/artworksService';
 import { getVerifiedArtists } from './services/artistService';
 import { getUsers } from './services/usersService';
 import { getFavorites } from './services/favoritesService';
+
 
 function App() {
   // const endpointArtists = "/artistsDB.json";
@@ -185,6 +187,7 @@ const updatingNavTotal = () => {
     <MyContext.Provider value={estadoCompartido}>
       <BrowserRouter>
         <Navbar />
+        <Header />
         <Routes>
           <Route path='/' element={<Home />}/> 
           <Route path='/carrito' element={<Carrito />}/>
@@ -197,7 +200,7 @@ const updatingNavTotal = () => {
           <Route path="*" element={<NotFound />} />
           <Route path='/artist/:id' element={<DetailArtist />} />
         </Routes>
-        <Footer />                  
+        <Footer />    
       </BrowserRouter>  
     </MyContext.Provider>      
   );
